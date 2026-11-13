@@ -2,15 +2,19 @@
 
 **UCAF-Net** is an uncertainty-guided dual-backbone image-classification framework combining ResNet50 and MobileNetV2 with Dual-Path Statistical Channel-Spatial Attention (DSCSA), bidirectional cross-attention, and uncertainty-guided feature fusion. This repository provides the **dataset-independent architecture and training/evaluation functions**, rather than a complete dataset-specific experiment.
 
+
 ## Architecture
 
-![UCAF-Net overall architecture](final_overall_archi.jpg)
+**Overall architecture.** Input images are processed by parallel ResNet50 and MobileNetV2 branches enhanced with DSCSA. Aligned features are tokenized, exchanged through uncertainty-conditioned bidirectional cross-attention, fused through a gated mechanism, and aggregated by attention pooling before classification.
 
-*Overall architecture.* Input images are processed by parallel ResNet50 and MobileNetV2 branches enhanced with DSCSA. Aligned features are tokenized, exchanged through uncertainty-conditioned bidirectional cross-attention, fused through a gated mechanism, and aggregated by attention pooling before classification.
 
-![Dual-Path Statistical Channel-Spatial Attention (DSCSA)](CBAM.jpg)
+<img src="https://github.com/user-attachments/assets/7aa4084d-22f1-4f5c-a4ed-f69c36c139d4" alt="UCAF-Net overall architecture" width="700" />
 
-*DSCSA module.* The attention block uses average, maximum, and standard-deviation pooling to capture complementary channel statistics, followed by spatial attention to refine the extracted feature maps.
+**DSCSA module.** The attention block uses average, maximum, and standard-deviation pooling to capture complementary channel statistics, followed by spatial attention to refine the extracted feature maps.
+
+
+<img src="https://github.com/user-attachments/assets/d50d8095-0687-4a60-81e7-f62302022f1c" alt="DSCSA architecture" width="550" />
+
 
 ## Repository structure
 
